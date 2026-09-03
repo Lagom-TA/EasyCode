@@ -1,0 +1,158 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2xl);
+  padding: 0 var(--sp-xl);
+  height: 52px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-xs);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+  transition: color var(--motion-fast) var(--ease-standard);
+}
+.brand:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+.brandMark {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+.brandSub {
+  font-size: var(--text-2sm);
+  color: var(--ink-subtle);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--sp-xl);
+  flex: 1;
+}
+.navLink {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  padding: 4px 0;
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-standard);
+}
+.navLink::after,
+.settingsLink::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--motion-medium) var(--ease-enter);
+}
+.navLink:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+.navLinkActive {
+  color: var(--ink);
+}
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
+.settingsLink {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  padding: 4px 0;
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.settingsLink:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.dueBadge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  min-width: 18px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--accent);
+  color: var(--ink-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  animation: due-badge-in var(--motion-slow) var(--ease-emphasis) both;
+}
+
+@keyframes due-badge-in {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    height: auto;
+    min-height: 52px;
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    gap: var(--sp-md);
+    padding: 0 var(--sp-md);
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .navLinks {
+    gap: var(--sp-md);
+    order: 3;
+    flex-basis: 100%;
+    padding-bottom: var(--sp-sm);
+  }
+}

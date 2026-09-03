@@ -1,0 +1,212 @@
+/* 视觉语汇对齐 ReviewPanel.module.css（同一套 --success/--warn/--danger token）。 */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  animation: test-result-in var(--motion-medium) var(--ease-enter) both;
+}
+
+/* ============ Header（verdict 徽章 + 计数） ============ */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+/* 语气着色走全局 tone-* 词汇表（globals.css），四值齐备。 */
+.badge {
+  font-family: var(--font-sans);
+  font-size: var(--text-2sm);
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--tone-fg, var(--ink-subtle));
+  border: 1px solid currentColor;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--text-2sm);
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============ 失败严重度行 ============
+ * 语义色使用完整描边与淡染底，不依赖单边色条。状态标签左 · 样例编号居中。
+ * danger / warn 组由 TestOutputPanel 排序保证 danger 在上，此处只承载单行外观。 */
+.failureRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--sp-sm) var(--sp-md);
+  border: 1px solid var(--tone-border, var(--line));
+  border-radius: var(--radius-sm);
+  background: var(--tone-surface, var(--bg-elevated));
+  animation: test-row-in var(--motion-medium) var(--ease-enter) both;
+}
+
+.failureHead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--sp-sm);
+}
+
+/* 状态标签：kicker 规格（等宽 uppercase），着严重度前景色。 */
+.failureStatus {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone-fg, var(--ink-subtle));
+}
+
+/* 样例编号 / 标题居中。 */
+.failureTitle {
+  justify-self: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-2sm);
+  color: var(--ink-muted);
+}
+
+.cardBody {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.ioBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ioLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+}
+.io,
+.trace {
+  margin: 0;
+  padding: 6px 8px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-2sm);
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+.trace {
+  color: var(--danger);
+}
+
+.noOutput {
+  margin: 0;
+  padding: 6px 8px;
+  background: var(--bg-soft);
+  border: 1px solid color-mix(in srgb, var(--warn) 32%, var(--line));
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-2sm);
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+.noOutput code {
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+.allPass {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--success);
+  animation: test-pass-in var(--motion-slow) var(--ease-emphasis) both;
+}
+
+.allPass::before {
+  content: "✓";
+  display: inline-block;
+  margin-right: var(--sp-sm);
+  font-family: var(--font-mono);
+}
+
+/* ============ loading / idle / error ============ */
+
+.idleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.executionNote {
+  margin: 0;
+  padding: var(--sp-sm) var(--sp-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  font-size: var(--text-2sm);
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* 行内等待（Pyodide 首载 / 运行中）走全局 .inline-wait；这里只补上下内边距。 */
+.inlineWait {
+  padding: var(--sp-md) 0;
+}
+
+.idle {
+  margin: 0;
+  padding: var(--sp-lg) 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--ink-subtle);
+}
+
+.errorWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  padding: var(--sp-md);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+  animation: test-row-in var(--motion-medium) var(--ease-enter) both;
+}
+
+@keyframes test-result-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes test-row-in {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes test-pass-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.errorTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--danger);
+  font-weight: 500;
+}
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: var(--text-2sm);
+  color: var(--ink-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
