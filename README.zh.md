@@ -30,6 +30,7 @@
 <p><sub>写题 → 测试 → 评测 → 回放 → 复习</sub></p>
 
 <p>
+<strong><a href="https://imlagom.com/easycode/">项目网站</a></strong> ·
 <strong><a href="#快速开始">快速开始</a></strong> ·
 <strong><a href="#训练闭环一览">训练闭环</a></strong> ·
 <strong><a href="#一道题走完完整训练闭环">产品演示</a></strong> ·
@@ -81,6 +82,23 @@ EasyCode 是一个运行在本机的算法训练工具，围绕作答、Python �
 - 历史回放、Markdown 导出、本地分享卡片生成
 
 ---
+
+## 适合怎样使用
+
+- **日常算法学习**：不只看是否通过，还能追溯错误、复杂度和思路形成的过程。
+- **准备编程面试**：把练习、结合上下文的提示和定期复习放在一起。
+- **维护个人题库**：用 Markdown 题面、Python 测试和评分标准组织自己的训练内容。
+
+## 继续了解
+
+| 想看什么 | 从这里开始 |
+|---|---|
+| 视觉介绍与交互式产品演示 | [EasyCode 项目网站](https://imlagom.com/easycode/) |
+| 项目的实现思路 | [项目文章](https://imlagom.com/blog/easycode/) |
+| 题库格式与示例 | [题库格式说明](PROBLEM_BANK_FORMAT.md) · [示例目录](examples/) |
+| 反馈建议或报告问题 | [GitHub Issues](https://github.com/Lagom-TA/EasyCode/issues) |
+
+项目网站用于介绍和演示；实际训练工作台按下方方式在自己的电脑上运行。Python 执行、草稿和学习进度保存在本地，AI 评测与辅导使用你配置的模型服务。
 
 ## 快速开始
 

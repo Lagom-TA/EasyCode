@@ -30,6 +30,7 @@
 <p><sub>WRITE → TEST → REVIEW → REPLAY → REVISIT</sub></p>
 
 <p>
+<strong><a href="https://imlagom.com/easycode/">Website</a></strong> ·
 <strong><a href="#quick-start">Quick Start</a></strong> ·
 <strong><a href="#the-loop-at-a-glance">The Loop</a></strong> ·
 <strong><a href="#one-problem-a-complete-training-loop">Product Tour</a></strong> ·
@@ -81,6 +82,23 @@ Each practice session becomes a reusable training record:
 - history replay, Markdown export, and local share-card rendering
 
 ---
+
+## Who it is for
+
+- **Algorithm learners** who want to understand mistakes, complexity, and how their solution developed.
+- **Interview preparation** built around repeatable practice, contextual hints, and a review queue.
+- **People building a personal problem bank** with Markdown statements, Python tests, and grading rubrics.
+
+## Explore the project
+
+| Looking for | Start here |
+|---|---|
+| Visual introduction and interactive product walkthrough | [EasyCode website](https://imlagom.com/easycode/) |
+| How the project was built | [Project write-up](https://imlagom.com/blog/easycode/) |
+| Problem format and examples | [Problem bank format](PROBLEM_BANK_FORMAT.md) · [Examples](examples/) |
+| Feedback and bug reports | [GitHub Issues](https://github.com/Lagom-TA/EasyCode/issues) |
+
+The website is a product introduction. Run the training workspace on your own machine using the options below. Python execution, drafts, and progress are local; AI review and tutoring use the model provider you configure.
 
 ## Quick Start
 
