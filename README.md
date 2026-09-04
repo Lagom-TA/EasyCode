@@ -104,7 +104,9 @@ The website is a product introduction. Run the training workspace on your own ma
 
 ### Option A: Desktop App (Windows / macOS)
 
-Download a desktop preview from [GitHub Releases](https://github.com/Lagom-TA/EasyCode/releases):
+Desktop packaging is included in the repository. Prebuilt installers have not yet been published to this repository's [GitHub Releases](https://github.com/Lagom-TA/EasyCode/releases). To use EasyCode now, start with [Docker](#option-b-docker) or [source development](#option-c-source-development) below.
+
+Packaging targets:
 
 - macOS Apple Silicon (`arm64`): DMG or ZIP
 - macOS Intel (`x64`): DMG or ZIP
@@ -115,10 +117,8 @@ user-data directory. It does not require Docker, Python, Node.js, or a network
 connection for local code execution. Configure an AI model in **Settings** if
 you want AI review and tutoring.
 
-> **Preview signing notice:** the first desktop packages are unsigned. macOS
-> Gatekeeper and Windows SmartScreen may show a warning. Verify the downloaded
-> file against `SHA256SUMS.txt` on the release page. Signed and notarized builds
-> are the remaining requirement before the desktop release is called stable.
+> **Desktop release status:** installer downloads, checksums, and signing details
+> will be documented on the corresponding release page when a build is published.
 
 ### Option B: Docker
 

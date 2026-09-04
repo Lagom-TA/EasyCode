@@ -104,7 +104,9 @@ EasyCode 是一个运行在本机的算法训练工具，围绕作答、Python �
 
 ### 方案 A：桌面版（Windows / macOS）
 
-从 [GitHub Releases](https://github.com/Lagom-TA/EasyCode/releases) 下载桌面预览版：
+仓库已包含桌面打包配置，目前这个仓库的 [GitHub Releases](https://github.com/Lagom-TA/EasyCode/releases) 尚未发布安装包。现在想使用 EasyCode，可以先按下方的 [Docker](#方案-bdocker) 或 [源码开发](#方案-c源码开发) 方式启动。
+
+打包目标包括：
 
 - Apple 芯片 Mac（`arm64`）：DMG 或 ZIP
 - Intel Mac（`x64`）：DMG 或 ZIP
@@ -114,10 +116,8 @@ EasyCode 是一个运行在本机的算法训练工具，围绕作答、Python �
 不要求预装 Docker、Python 或 Node.js；本地运行代码也不依赖网络。
 如需 AI 评测和助教，在应用内“设置”中配置模型即可。
 
-> **预览版签名说明：**首批桌面安装包尚未签名。macOS Gatekeeper 或
-> Windows SmartScreen 可能显示提醒。请用 Release 页面里的
-> `SHA256SUMS.txt` 核对下载文件。完成 macOS 签名/公证和 Windows 代码签名后，
-> 才适合将桌面版标记为稳定版。
+> **桌面版发布状态：**安装包发布后，对应 Release 页面会列出下载文件、
+> 校验信息和签名情况。
 
 ### 方案 B：Docker
 
